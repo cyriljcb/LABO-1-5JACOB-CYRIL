@@ -76,16 +76,16 @@ foreach (Carre car in carrelist)
 { Console.WriteLine(car); }
 
 Console.WriteLine("Liste de formes avant tri :");
-foreach (Forme forme in liste)
+foreach (Forme forme in carrelist)
 {
     Console.WriteLine(forme);
 }
 
 FormeAbscisseComparer comparer = new FormeAbscisseComparer();
-liste.Sort(comparer);
+carrelist.Sort(comparer);
 
 Console.WriteLine("\nListe de formes après tri :");
-foreach (Forme forme in liste)
+foreach (Forme forme in carrelist)
 {
     Console.WriteLine(forme);
 }

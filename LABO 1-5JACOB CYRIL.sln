@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LABO", "LABO\LABO.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaLibrairieForme", "MaLibrairieForme\MaLibrairieForme.csproj", "{4134793A-A1E3-4D95-8CF0-614097A36360}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaLibrairieMath", "MathUtil\MaLibrairieMath.csproj", "{FC606547-1190-4896-8C15-74762138A71B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaLibrairieMath", "MathUtil\MaLibrairieMath.csproj", "{FC606547-1190-4896-8C15-74762138A71B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaLibrairieFormeTests", "MaLibrairieFormeTests\MaLibrairieFormeTests.csproj", "{50A007AD-C893-4017-9577-4602D57982DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaLibrairieFormeTests", "MaLibrairieFormeTests\MaLibrairieFormeTests.csproj", "{50A007AD-C893-4017-9577-4602D57982DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labo2", "Labo2\Labo2.csproj", "{68F75DFA-D172-47EA-A113-DBE69D57AEAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{50A007AD-C893-4017-9577-4602D57982DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50A007AD-C893-4017-9577-4602D57982DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50A007AD-C893-4017-9577-4602D57982DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F75DFA-D172-47EA-A113-DBE69D57AEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F75DFA-D172-47EA-A113-DBE69D57AEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F75DFA-D172-47EA-A113-DBE69D57AEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F75DFA-D172-47EA-A113-DBE69D57AEAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

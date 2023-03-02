@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace MaLibrairieForme
 {
-    public class Carre : Forme, IEstDans,ISommets,IComparable<Carre>
+    public class Carre : Forme, IEstDans, ISommets, IComparable<Carre>
     {
         #region VARIABLES MEMBRES
-        public int lon;
+        private int lon;
         #endregion
 
         #region PROPRIETES
-        public int _lon
+        public int Longueur
         {
             get { return lon; }
             set { lon = value; }
@@ -25,6 +25,7 @@ namespace MaLibrairieForme
             string s = $"({lon},{lon})";
             return s;
         }
+
         public int NbSommet
         {
             get { return 4; }
@@ -35,19 +36,19 @@ namespace MaLibrairieForme
         #region CONSTRUCTEURS
         public Carre(int l)
         {
+            coor = new Coordonnees();
             lon = l;
         }
 
-        public Carre()
+        public Carre() : this(0)
         {
-            Carre c= new Carre(0);
         }
-        #endregion
+        #endregion 
 
+        public int NbSommets => throw new NotImplementedException();
         public override void Affiche()
         {
-            Console.WriteLine("Voici les longueurs des côtés du carré : "+ToString());
-            
+            Console.WriteLine("Voici les longueurs des côtés du carré : " + ToString());
         }
 
         public bool CoordonneesEstDans(Coordonnees p)
@@ -60,7 +61,6 @@ namespace MaLibrairieForme
 
             return true;
         }
-        public int NbSommets => throw new NotImplementedException();
 
         public int CompareTo(Carre other)
         {
@@ -68,7 +68,7 @@ namespace MaLibrairieForme
             {
                 return 1;
             }
-            return -lon.CompareTo(other._lon);
+            return -lon.CompareTo(other.Longueur);
         }
     }
 }
