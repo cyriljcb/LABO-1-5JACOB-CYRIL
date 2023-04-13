@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaLibrairieForme
 {
-    public class Cercle : Forme, IEstDans
+    public class Cercle : Forme, IEstDans, ICercle
     {
         #region VARIABLES MEMBRES
         public int ray;
@@ -39,7 +39,7 @@ namespace MaLibrairieForme
 
         public override void Affiche()
         {
-            Console.WriteLine("Voici le rayon du cercle : " +ToString());
+            Console.WriteLine("Voici le rayon du cercle : " + ToString());
 
         }
 

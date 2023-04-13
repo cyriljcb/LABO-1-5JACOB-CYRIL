@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Labo2
+namespace Labo3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,21 +23,8 @@ namespace Labo2
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = new MainWindowViewModel();
+        
         }
     }
 }

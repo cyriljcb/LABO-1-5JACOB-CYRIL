@@ -5,58 +5,126 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labo2"
         mc:Ignorable="d"
-         Title="Calculatrice" Height="540" Width="340" MinHeight="540" MinWidth="340" Background="#E6E6E6" FontSize="18">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="37*"/>
-            <ColumnDefinition Width="23*"/>
-        </Grid.ColumnDefinitions>
-
-        <Button Content="+/-" HorizontalAlignment="Left" Margin="3,470,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="0" HorizontalAlignment="Left" Margin="87,470,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="," HorizontalAlignment="Left" Margin="172,470,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="=" HorizontalAlignment="Left" Margin="35,470,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-
-        <Button Content="1" HorizontalAlignment="Left" Margin="3,415,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="87,415,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="173,415,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="35,415,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-
-        <Button Content="4" HorizontalAlignment="Left" Margin="3,360,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="87,360,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="6" HorizontalAlignment="Left" Margin="173,360,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="35,360,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-
-        <Button Content="7" HorizontalAlignment="Left" Margin="3,305,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="8" HorizontalAlignment="Left" Margin="87,305,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="173,305,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="x" HorizontalAlignment="Left" Margin="35,305,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-
-        <Button Content="1/x" HorizontalAlignment="Left" Margin="3,250,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="x²" HorizontalAlignment="Left" Margin="87,250,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="²√x" HorizontalAlignment="Left" Margin="173,250,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="÷" HorizontalAlignment="Left" Margin="35,250,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-
-        <Button Content="%" HorizontalAlignment="Left" Margin="3,195,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="CE²" HorizontalAlignment="Left" Margin="87,195,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="C" HorizontalAlignment="Left" Margin="173,195,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="⌫" HorizontalAlignment="Left" Margin="35,195,0,0" VerticalAlignment="Top" Height="50" Width="81" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-
-        <Button Content="MC" HorizontalAlignment="Left" Margin="3,156,0,0" VerticalAlignment="Top" Height="34" Width="51" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="MR" HorizontalAlignment="Left" Margin="60,156,0,0" VerticalAlignment="Top" Height="34" Width="51" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="M+" HorizontalAlignment="Left" Margin="116,156,0,0" VerticalAlignment="Top" Height="34" Width="52" Click="Button_Click_1" FontSize="14"/>
-        <Button Content="M-" HorizontalAlignment="Left" Margin="173,156,0,0" VerticalAlignment="Top" Height="34" Width="51" Click="Button_Click_1" FontSize="14" Grid.ColumnSpan="2"/>
-        <Button Content="MS" HorizontalAlignment="Left" Margin="7,156,0,0" VerticalAlignment="Top" Height="34" Width="51" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
-        <Button Content="M∨" HorizontalAlignment="Left" Margin="64,156,0,0" VerticalAlignment="Top" Height="34" Width="52" Click="Button_Click_1" FontSize="14" Grid.Column="1"/>
+         Title="Calculatrice" Height="570" Width="380" MinHeight="540" MinWidth="340" Background="#E6E6E6" FontSize="18">
 
 
+    <DockPanel>
 
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!-- HIDE COLUMN 2 / WINDOWS UI COLORS / RIGHT PANEL -> RIGHT ALIGN -->
+                <ColumnDefinition Width="*" MinWidth="317" />
+                <!-- EDIT WIDTH (320) -->
+                <ColumnDefinition Width="0" />
+            </Grid.ColumnDefinitions>
 
+            <Grid Grid.Column="0" Grid.Row="0" Margin="3,0,3,3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
 
-    </Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="39*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="15*" />
+                </Grid.RowDefinitions>
 
+                <DockPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Margin="-3,0,-3,0">
+                    <DockPanel DockPanel.Dock="Top" Height="40">
+                        <Button Width="40" FontFamily="Segoe MDL2 Assets" FontSize="16" Content="&#xE700;"  />
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="1.5,0,7.5,0">Standard</Label>
+                        <Button Width="40" FontFamily="Segoe MDL2 Assets" FontSize="16" Content="&#xEE49;" />
+                        <Button Width="40" HorizontalAlignment="Right" FontFamily="Segoe MDL2 Assets" FontSize="16" Content="&#xF738;" />
+                    </DockPanel>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                        <Label FontSize="14" Foreground="#727272" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,-2,7.5,0">9 - 6 =</Label>
+                        <Label FontSize="46" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,-10,7.5,0">3</Label>
+                    </StackPanel>
+                </DockPanel>
+
+                <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MaxWidth="800" />
+                        <ColumnDefinition MaxWidth="800" />
+                        <ColumnDefinition MaxWidth="800" />
+                        <ColumnDefinition MaxWidth="800" />
+                        <ColumnDefinition MaxWidth="800" />
+                        <ColumnDefinition MaxWidth="800" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" Content="MC"  />
+                    <Button Grid.Column="1" Content="MR"  />
+                    <Button Grid.Column="2" Content="M+"  />
+                    <Button Grid.Column="3" Content="M-"  />
+                    <Button Grid.Column="4" Content="MS"  />
+                    <Button Grid.Column="5" Content="M∨"  />
+                </Grid>
+
+                <Button Grid.Column="0" Grid.Row="2" Content="%" />
+                <Button Grid.Column="1" Grid.Row="2" Content="CE"  />
+                <Button Grid.Column="2" Grid.Row="2" Content="C"  />
+                <Button Grid.Column="3" Grid.Row="2" FontFamily="Segoe MDL2 Assets" Content="&#xE94F;"  />
+
+                <Button Grid.Column="0" Grid.Row="3" FontFamily="Segoe UI" FontSize="15" Content="&#x215F;&#x1D465;"  />
+                <Button Grid.Column="1" Grid.Row="3" FontFamily="Segoe UI" FontSize="15" Content="&#x1D465;&#xB2;" />
+                <Button Grid.Column="2" Grid.Row="3" FontFamily="Segoe UI" FontSize="15" Content="&#xB2;&#x221A;&#x1D465;"  />
+                <Button Grid.Column="3" Grid.Row="3" FontFamily="Segoe MDL2 Assets" Content="&#xE94A;"  />
+
+                <Button Grid.Column="0" Grid.Row="4" Content="7"  />
+                <Button Grid.Column="1" Grid.Row="4" Content="8"  />
+                <Button Grid.Column="2" Grid.Row="4" Content="9"  />
+                <Button Grid.Column="3" Grid.Row="4" FontFamily="Segoe MDL2 Assets" Content="&#xE947;" />
+
+                <Button Grid.Column="0" Grid.Row="5" Content="4"  />
+                <Button Grid.Column="1" Grid.Row="5" Content="5"  />
+                <Button Grid.Column="2" Grid.Row="5" Content="6"  />
+                <Button Grid.Column="3" Grid.Row="5" FontFamily="Segoe MDL2 Assets" Content="&#xE949;"  />
+
+                <Button Grid.Column="0" Grid.Row="6" Content="1"  />
+                <Button Grid.Column="1" Grid.Row="6" Content="2"  />
+                <Button Grid.Column="2" Grid.Row="6" Content="3"  />
+                <Button Grid.Column="3" Grid.Row="6" FontFamily="Segoe MDL2 Assets" Content="&#xE948;"  />
+
+                <Button Grid.Column="0" Grid.Row="7" FontFamily="Segoe UI" FontSize="16" Content="&#x207A;&#x2215;&#x208B;" />
+                <Button Grid.Column="1" Grid.Row="7" Content="0"  />
+                <Button Grid.Column="2" Grid.Row="7" Content=","  />
+                <Button Grid.Column="3" Grid.Row="7" FontFamily="Segoe MDL2 Assets" Content="&#xE94E;" Click="Button_Click_2"  />
+            </Grid>
+
+            <!-- EDIT WIDTH -->
+            <GridSplitter Grid.Column="0" Width="0" Background="Black" />
+
+            <DockPanel Grid.Column="1">
+                <WrapPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label FontSize="16" FontWeight="SemiBold" BorderBrush="#9A9696" BorderThickness="0,0,0,3" Margin="16,4,7.5,0" Padding="0,5,0,5">Historique</Label>
+                    <Label FontSize="16" FontWeight="SemiBold" Margin="15,4,7.5,0">Mémoire</Label>
+                </WrapPanel>
+                <Button DockPanel.Dock="Bottom" Height="40" Width="40" HorizontalAlignment="Right" FontFamily="Segoe MDL2 Assets" FontSize="18" Content="&#xE74D;"  />
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,15,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <Button HorizontalContentAlignment="Right" Margin="0,0,0,18" >
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="10,3,10,0">
+                                <Label FontSize="14" HorizontalAlignment="Right" Margin="0">34 + 45 =</Label>
+                                <Label FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="0,-6.5,0,0">34</Label>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
 </Window>
+
 
       
            

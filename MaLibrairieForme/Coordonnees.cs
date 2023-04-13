@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaLibrairieForme
 {
-    public class Coordonnees : IComparable<Coordonnees>
+    public class Coordonnees : IComparable<Coordonnees>, ICoordonnees
     {
         #region VARIABLES MEMBRES
         public int x;

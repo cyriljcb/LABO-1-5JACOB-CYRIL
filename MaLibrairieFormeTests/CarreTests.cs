@@ -16,8 +16,8 @@ namespace MaLibrairieForme.Tests
         {
             Carre c = new Carre();
             Carre c1 = new Carre(5);
-            Assert.AreEqual(c.lon, 0);   
-            Assert.AreEqual(c1.lon, 5);
+            Assert.AreEqual(c.Longueur, 0);   
+            Assert.AreEqual(c1.Longueur, 5);
         }
         [TestMethod()]
         public void ToStringTest()
@@ -31,16 +31,16 @@ namespace MaLibrairieForme.Tests
         public void TestSetter()
         {
             Carre c1 = new Carre(-2);
-            Assert.AreEqual(c1.lon, -2);
-            c1.lon = 10;
-            Assert.AreEqual(c1.lon, 10);
+            Assert.AreEqual(c1.Longueur, -2);
+            c1.Longueur = 10;
+            Assert.AreEqual(c1.Longueur, 10);
         }
 
         [TestMethod()]
         public void TestGetter()
         {
             Carre c1 = new Carre(-2);
-            Assert.AreEqual(c1.lon, -2);
+            Assert.AreEqual(c1.Longueur, -2);
         }
         [TestMethod()]
         public void TestCoordonneEstDans()

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaLibrairieForme
 {
-    public class Carre : Forme, IEstDans, ISommets, IComparable<Carre>
+    public class Carre : Forme, IEstDans, ISommets, IComparable<Carre>, ICarre
     {
         #region VARIABLES MEMBRES
         private int lon;
