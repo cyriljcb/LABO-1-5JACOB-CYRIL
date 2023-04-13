@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaLibrairieForme
+namespace Infrastructure
 {
-    public interface ISommets
+    public interface IForme
     {
-        int NbSommets { get; }
+        public ICoordonnees PointAccroche { get; set; }
     }
 }

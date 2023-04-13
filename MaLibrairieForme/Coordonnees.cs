@@ -3,54 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure;
 
 namespace MaLibrairieForme
 {
-    public class Coordonnees : IComparable<Coordonnees>, ICoordonnees
+    public class Coordonnees : ICoordonnees
     {
-        #region VARIABLES MEMBRES
-        public int x;
-        public int y;
-        #endregion
+        public Coordonnees() : this(0, 0) { }
 
-        #region PROPRIETES
-        public int _x
+        public Coordonnees(int x, int y)
         {
-            get { return x; }
-            set { x = value; }
+            this.X = x;
+            this.Y = y;
         }
-        public int _y
-        {
-            get { return y; }
-            set { y = value; }
-        }
+
+        public int X { get; set; }
+
+        public int Y { get; set; }
 
         public override string ToString()
         {
-            //string s = $"({x},{y})";
-            string s = $"({_x},{_y})";
-            return s;
+            return $"({X}, {Y})";
         }
-        #endregion
-
-        #region CONSTRUCTEURS
-        public Coordonnees(int _x, int _y)
-        {
-            x = _x;
-            y = _y;
-        }
-
-        public Coordonnees()
-        {
-            /* Coordonnees(0,0);*/
-            Coordonnees c = new Coordonnees(0, 0);
-        }
-        #endregion
-        public int CompareTo(Coordonnees other)
-        {
-            return x.CompareTo(other.x);
-        }
-
-
     }
 }

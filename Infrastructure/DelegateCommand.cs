@@ -28,6 +28,11 @@ namespace Infrastructure
             return _canExecute(parameter);
         }
 
+        public void Execute(object parameter)
+        {
+            _execute(parameter);
+        }
+
         public void RaiseCanExecuteChanged()
         {
             if(CanExecuteChanged != null)

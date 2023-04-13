@@ -1,64 +1,55 @@
-﻿using System;
+﻿using Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure;
 
 namespace MaLibrairieForme
 {
-    public class Rectangle : Forme, IEstDans, ISommets
+    public class Rectangle : Forme, IEstDans, ISommets, IRectangle
     {
+        public Rectangle() : this(new Coordonnees(0, 0), 0, 0) { }
 
-        #region VARIABLES MEMBRES
-        public int Lon;
-        public int larg;
-        #endregion
-
-        #region PROPRIETES
-        public int _Lon
+        public Rectangle(int x, int y, int longueur, int largeur) : this(new Coordonnees(x, y), longueur, largeur)
         {
-            get { return Lon; }
-            set { Lon = value; }
+
         }
 
-        public int NbSommets => throw new NotImplementedException();
-
-        public override string ToString()
+        public Rectangle(Coordonnees coords, int longueur, int largeur)
         {
-            string s = $"({Lon},{larg})";
-            return s;
-        }
-        #endregion
-
-        #region CONSTRUCTEURS
-        public Rectangle(int l, int la)
-        {
-            Lon = l;
-            larg = la;
+            this.pointAccroche = coords;
+            this.Longueur = longueur;
+            this.Largeur = largeur;
         }
 
-        public Rectangle()
-        {
-            Rectangle c = new Rectangle(0, 0);
-        }
-        #endregion
+        public int Longueur { get; set; }
+        public int Largeur { get; set; }
 
         public override void Affiche()
         {
-            Console.WriteLine("Voici la longueur et la largeur des côtés du rectangle: " + ToString());
-
+            Console.WriteLine($"Rectangle de longueur = {Longueur}, largeur = {Largeur} et point d'accroche {this.pointAccroche}\n");
         }
-        public int NbSommet
+        public override string ToString()
         {
-            get { return 4; }
+            return $"Rectangle({Longueur}, {Largeur}){this.pointAccroche}";
         }
 
-        public bool CoordonneesEstDans(Coordonnees p)
+        bool IEstDans.CoordonneeEstDans(ICoordonnees p)
         {
-            if (p.x >= coor.x && p.x <= coor.x + Lon && p.y >= coor.y && p.y <= coor.x - larg)
-                return true;
-            else
-                return false;
+            return this.CoordonneeEstDans(p);
+        }
+
+        public bool CoordonneeEstDans(ICoordonnees p)
+        {
+            return p.X >= this.pointAccroche.X && p.X <= this.pointAccroche.X + Longueur && p.Y >= this.pointAccroche.Y && p.Y <= this.pointAccroche.Y + Largeur;
+            //return p.X >= _pointAccroche.X && p.X <= _pointAccroche.X + Longueur && p.Y <= _pointAccroche.Y && p.Y >= _pointAccroche.Y - largeur;
+        }
+
+        public int NbrSommets()
+        {
+            return 4;
         }
     }
 }

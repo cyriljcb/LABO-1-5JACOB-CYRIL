@@ -4,71 +4,65 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Infrastructure;
 
 namespace MaLibrairieForme
 {
-    public class Carre : Forme, IEstDans, ISommets, IComparable<Carre>, ICarre
+    public class Carre : Forme, IEstDans, ISommets, IComparable, ICarre
     {
-        #region VARIABLES MEMBRES
-        private int lon;
-        #endregion
+        public int Longueur { get; set; }
+        public string Couleur { get; set; }
+        public string Course { get; set; }
 
-        #region PROPRIETES
-        public int Longueur
+        public Carre() : this(new Coordonnees(0, 0), 0)
         {
-            get { return lon; }
-            set { lon = value; }
+        }
+
+        public Carre(int x, int y, int longueur) : this(new Coordonnees(x, y), longueur)
+        {
+
+        }
+
+        public Carre(Coordonnees coords, int longueur)
+        {
+            this.pointAccroche = coords;
+            this.Longueur = longueur;
         }
 
         public override string ToString()
         {
-            string s = $"({lon},{lon})";
-            return s;
+            return $"Carré({Longueur})" + pointAccroche;
         }
 
-        public int NbSommet
-        {
-            get { return 4; }
-        }
-
-        #endregion
-
-        #region CONSTRUCTEURS
-        public Carre(int l)
-        {
-            coor = new Coordonnees();
-            lon = l;
-        }
-
-        public Carre() : this(0)
-        {
-        }
-        #endregion 
-
-        public int NbSommets => throw new NotImplementedException();
         public override void Affiche()
         {
-            Console.WriteLine("Voici les longueurs des côtés du carré : " + ToString());
+            Console.WriteLine($"Carré de longueur {Longueur} accroché au point {this.pointAccroche}\n");
         }
 
-        public bool CoordonneesEstDans(Coordonnees p)
+        bool IEstDans.CoordonneeEstDans(ICoordonnees p)
         {
-
-            if (this.coor.x + this.lon < p.x || this.coor.x > p.x)
-                return false;
-            if (this.coor.y + this.lon < p.y || this.coor.y > p.y)
-                return false;
-
-            return true;
+            return this.CoordonneeEstDans(p);
         }
 
-        public int CompareTo(Carre other)
+        public bool CoordonneeEstDans(ICoordonnees p)
         {
-            if (other == null)
-            {
-                return 1;
-            }
-            return -lon.CompareTo(other.Longueur);
+            return p.X >= this.pointAccroche.X && p.X <= this.pointAccroche.X + Longueur && p.Y >= this.pointAccroche.Y && p.Y <= this.pointAccroche.Y + Longueur;
+            //return p.X >= _pointAccroche.X && p.X <= _pointAccroche.X + longueur && p.Y <= _pointAccroche.Y && p.Y >= _pointAccroche.Y - longueur;
+        }
+
+        public int NbrSommets()
+        {
+            return 4;
+        }
+
+        public int CompareTo(object? carre)
+        {
+            return CompareLong(this, (Carre)carre);
+        }
+
+        public static int CompareLong(Carre carre1, Carre carre2)
+        {
+            return MathUtil.Surface(carre1) - MathUtil.Surface(carre2);
         }
     }
 }

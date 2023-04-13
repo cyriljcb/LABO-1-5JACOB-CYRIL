@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaLibrairieForme
+namespace Infrastructure
 {
-    public interface IEstDans
+    public interface ICoordonnees
     {
-        public bool CoordonneesEstDans(Coordonnees p);
-
+        int X { get; set; }
+        int Y { get; set; }
     }
 }
