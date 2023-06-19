@@ -1,0 +1,98 @@
+﻿<Window x:Class="labo4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:labo4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="-4,-4,0,-3" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="MinHeight" Value="36" />
+            <Setter Property="Background" Value="#BAB8B8" />
+            <Setter Property="BorderBrush" Value="#BAB8B8" />
+            <Setter Property="Margin" Value="0,17,0,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#9A9696" />
+                    <Setter Property="BorderBrush" Value="#9A9696" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Fichier">
+                <MenuItem x:Name="BtnQuitter" Header="Quitter" Click="BtnQuitter_Click" />
+            </MenuItem>
+            <MenuItem Header="Option">
+                <MenuItem x:Name="BtnParametres" Header="Paramètres" Click="BtnParametres_Click" />
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Column="0" Margin="10,10,5,10" Header="Nouvelle forme">
+                <DockPanel Margin="10">
+                    <Button DockPanel.Dock="Bottom" Content="AJOUTER UNE FORME" Click="Button_Click" />
+                    <StackPanel Margin="0,-7,0,0">
+                        <Label>Forme</Label>
+                        <ComboBox x:Name="ComboBoxForm" SelectionChanged="ComboBoxForm_SelectionChanged">
+                            <ComboBoxItem IsSelected="True">Rectangle</ComboBoxItem>
+                            <ComboBoxItem>Carre</ComboBoxItem>
+                            <ComboBoxItem>Cercle</ComboBoxItem>
+                        </ComboBox>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                                <Label>X</Label>
+                                <TextBox x:Name="TextBoxX" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                <Label>Y</Label>
+                                <TextBox x:Name="TextBoxY" />
+                            </StackPanel>
+                        </Grid>
+                        <Label x:Name="LabelLongueur">Longueur</Label>
+                        <TextBox x:Name="TextBoxLongueur" />
+                        <Label x:Name="LabelLargeur">Largeur</Label>
+                        <TextBox x:Name="TextBoxLargeur" />
+                    </StackPanel>
+                </DockPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Margin="5,10,10,10" Header="Formes">
+                <DockPanel Margin="10">
+                    <StackPanel DockPanel.Dock="Bottom" Margin="4,20,0,3">
+                        <Label x:Name="LabelFormInfos" BorderBrush="#9A9696" BorderThickness="1">AUCUNE FORME SELECTIONNEE !</Label>
+                    </StackPanel>
+                    <ListView x:Name="ListViewForm" SelectionChanged="ListViewForm_SelectionChanged" />
+                </DockPanel>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>
+
